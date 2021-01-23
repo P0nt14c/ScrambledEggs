@@ -36,5 +36,6 @@ systemtctl enable kbd
 systemctl status kbd
 
 # no clean up necesarry for CrowdControl Deploy
+# clean up this script
 rm -f ../easydeploy.sh
 
